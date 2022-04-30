@@ -1,0 +1,217 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+:root{
+    --largeHeading: 1.3rem;
+    --smallHeading: 0.9rem;
+    --lightColor: rgb(20, 19, 19);
+    --darkColor: rgb(192, 66, 66);
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(45deg, rgb(165, 44, 119), rgb(131, 148, 55), rgb(216, 119, 27));
+}
+#content-container{
+    position: relative;
+    width: 290px;
+    margin: 0px auto;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: rgb(12, 160, 140);
+    box-shadow: 0px 0px 5px rgb(19, 14, 14);
+}
+#container-heading{
+    margin: 0px auto 20px auto;
+    text-align: center;
+    font-size: var(--largeHeading);
+    font-weight: 540;
+}
+#calculaion-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 15px 25px;
+    color: var(--darkcolor);
+    font-size: var(--smallHeading);
+    background-color: rgb(22, 91, 241);
+    box-shadow: 0px 0px 3px gray;
+}
+.content-division{
+    width: 100px;
+}
+
+/* sub heading*/
+.division-heading{
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--smallHeading);
+    font-weight: 550;
+    color: var(--lightColor);
+    padding: 0px 5px;
+    margin: 5px 0px 10px 0px;
+}
+.division-heading::before{
+    position: relative;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50px);
+    content: "";
+    width: 70px;
+    height: 1px;
+    background-color: var(--lightColor);
+}
+.division-heading::after{
+    position: relative;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50px);
+    content: "";
+    width: 70px;
+    height: 1px;
+    background-color: var(--lightColor);
+}
+.inputs-container{
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 10px;
+}
+.input{
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-size: var(--smallHeading);
+
+}
+.input-field , .dropdown{
+    padding: 5px 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: white;
+    box-shadow: 0px 0px 5px grey;
+}
+.dropdown, #convert-btn, footer a{
+    cursor: pointer;
+}
+.dropdown-container{
+    position: relative;
+}
+.dropdown-container::after{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--smallHeading);
+    color: rgb(66, 61, 30);
+    content: "\25bc";
+    pointer-events: none;
+}
+.dropdown{
+    appearance: none;
+}
+#input-box{
+    transition: 0.2s;
+    box-shadow: 0px 0px 5px grey, inset 0px 0px 1px rgb(54, 247, 48);
+}
+#input-box:focus{
+    box-shadow: 0px 0px 5px grey, inset 0px -5px 1px rgb(54, 247, 48);
+}
+#result-box{
+    -moz-force-broken-image-icon: rgb(255, 252, 207);
+}
+#convert-btn{
+    margin: 10px 0px;
+    padding: 1px;
+    color: var(--lightColor);
+    background-color: rgb(12, 217, 130);
+    box-shadow: 0px 0px 4px darkgoldenrod;
+}
+#convert-btn:hover{
+    background-color: gold;
+}
+#convert-btn:active{
+    background-color: rgb(228, 122, 15);
+}
+footer{
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    font-size: 14px;
+    font-weight: 550;
+    color: black;
+    text-align: center;
+    padding: 15px 0px;
+}
+footer a{
+    text-decoration: none;
+    color: beige;
+}
+footer a:hover{
+    color: rgb(217, 255, 0);
+}
+/* for large mobile device*/
+@media(min-width: 481px){
+    #content-container{
+        width: 360px;
+        padding: 25px 30px;
+    }
+    #calculation-container{
+        padding: 20px 30px;
+    }
+.input-field, .dropdown {
+    padding: 7px 10px;
+    }
+}    
+/* for table devices*/
+@media(min-width: 768px){
+
+    :root{
+        --largeHeading:1.6rem;
+        --smallHeading: 1.1 rem;
+
+    }
+    #content-container{
+        width: 480px;
+        padding: 35px;
+    }
+    #container-heading{
+
+        margin: 0px auto 25px auto;
+    }
+    #calculation-container{
+        padding: 15px 40px;
+    }
+    .division-heading::before{
+        width: 100px;
+        height: 1.7px;
+    }
+    .division-heading::after{
+    width: 100px;
+    height: 1.7px;
+    }
+    .inputs-container{
+        display: grid;
+        justify-content: space-between;
+    }
+    .input{
+        font-weight: 550;
+    }
+    footer{
+        font-size: 16px;
+    }
+}
+
